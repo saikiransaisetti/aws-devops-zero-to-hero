@@ -21,6 +21,7 @@ phases:
       - echo "$DOCKER_REGISTRY_PASSWORD" | docker login -u "$DOCKER_REGISTRY_USERNAME" --password-stdin "$DOCKER_REGISTRY_URL"
       - docker build -t "$DOCKER_REGISTRY_URL/$DOCKER_REGISTRY_USERNAME/simple-python-flask-app:latest" .
       - docker push "$DOCKER_REGISTRY_URL/$DOCKER_REGISTRY_USERNAME/simple-python-flask-app:latest"
+     ## If you’re using Docker Hub, you can omit DOCKER_REGISTRY_URL in both docker login and docker push commands, as Docker will use Docker Hub by default. Update your commands as follows:
       # echo "$DOCKER_REGISTRY_PASSWORD" | docker login -u "$DOCKER_REGISTRY_USERNAME" --password-stdin
       #- docker build -t "$DOCKER_REGISTRY_USERNAME/simple-python-flask-app:latest" .
       #- docker push "$DOCKER_REGISTRY_USERNAME/simple-python-flask-app:latest"
